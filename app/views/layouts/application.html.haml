@@ -1,0 +1,13 @@
+!!! 5
+%html
+  %head
+    %title WallPost
+    = stylesheet_link_tag    "wall_post_main", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    = yield
+
+
+
+

@@ -1,0 +1,17 @@
+database_common: &database_common
+  adapter: postgresql
+  encoding: utf8
+  reconnect: true
+  prepared_statements: false
+  host: localhost
+
+panel_user_development: &panel_user_development
+  username: wall_post_main
+  password: pnd4fe69
+
+#wall_post
+
+development:
+  database: wall_post
+  <<: *database_common
+  <<: *panel_user_development

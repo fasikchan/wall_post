@@ -1,0 +1,20 @@
+= form_for @post do |f|
+  = f.text_field :author
+  = f.text_field :text
+
+  = f.submit "post"
+
+%table
+  %thead
+    %tr
+      %th id
+      %th author
+      %th text
+      %th created_at
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.id
+        %td= post.author
+        %td= post.text
+        %td= post.created_at

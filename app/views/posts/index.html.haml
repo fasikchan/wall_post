@@ -1,0 +1,32 @@
+.top
+
+  %span Just test
+
+.content
+
+  .information
+
+    Привет. Это тестовая страница, на которую Вы попали вероятнее всего по приглашению.<br>
+    Если же нет, то боюсь, что ничего интересного тут для Вас нет.<br>
+
+  .inputs
+
+    = form_for @post do |f|
+
+      = f.text_area :author, class: "author_input", placeholder: "Имя"
+      %br
+      = f.text_area :text,   class: "text_input", placeholder: "Текст"
+      %br
+      = f.submit "Отправить",class: "button"
+
+  .posts
+
+    - @posts.each do |p|
+      .author_output= p.author + ":" + " #{p.created_at}"
+      %br
+      .text_output= p.text
+
+.bottom
+
+  %span Just test
+
